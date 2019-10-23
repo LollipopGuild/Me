@@ -24,7 +24,7 @@ namespace Me.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             BlazorWebViewService.Init();
-            LoadApplication(new App());
+            LoadApplication(new Forms.App());
 
             return base.FinishedLaunching(app, options);
         }

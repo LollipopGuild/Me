@@ -23,7 +23,7 @@
 	<key>CFBundleDisplayName</key>
 	<string>Me</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.twobee.blazorinteropapp</string>
+	<string>com.alchebyte.me</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>UILaunchStoryboardName</key>
