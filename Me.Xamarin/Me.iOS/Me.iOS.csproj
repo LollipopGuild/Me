@@ -143,4 +143,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\Icon180.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\launch-logo.png" />
+  </ItemGroup>
 </Project>
