@@ -16,4 +16,10 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Me\Me.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="MeView.xaml.cs">
+      <DependentUpon>MeView.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
 </Project>
