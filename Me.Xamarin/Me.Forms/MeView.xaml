@@ -4,14 +4,12 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             xmlns:me="clr-namespace:Me;assembly=Me"
              xmlns:mexam="clr-namespace:Me.Forms"
              x:Class="Me.Forms.MeView">
-
     <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+        <ImageButton x:Name="__Picture" />
+        <Label x:Name="__GivenNames"/>
+        <Label x:Name="__FamilyName"/>
     </StackLayout>
-
 </mexam:MeView_Reactive>
