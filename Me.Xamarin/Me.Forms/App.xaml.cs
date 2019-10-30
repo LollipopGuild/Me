@@ -10,7 +10,7 @@ namespace Me.Forms
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new MeView();
         }
 
         protected override void OnStart()
