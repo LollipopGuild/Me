@@ -13,11 +13,11 @@
                         <viewControllerLayoutGuide type="bottom" id="9ZL-r4-8FZ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="yd7-JS-zBw">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" image="launch-logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="23">
-                                <rect key="frame" x="0" y="0" width="512" height="1024"/>
+                                <rect key="frame" x="0" y="0" width="400" height="800"/>
                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
                             </imageView>
                         </subviews>
@@ -30,10 +30,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XAI-xm-WK6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="349" y="339"/>
+            <point key="canvasLocation" x="0" y="0"/>
         </scene>
     </scenes>
     <resources>
-        <image name="launch-logo.png" width="512" height="1024"/>
+        <image name="launch-logo.png" width="400" height="800"/>
     </resources>
 </document>
