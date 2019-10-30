@@ -1,6 +1,11 @@
 ﻿using System;
+using System.Reflection;
+
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+
+using ReactiveUI;
+using Splat;
 
 namespace Me.Forms
 {
@@ -8,6 +13,8 @@ namespace Me.Forms
     {
         public App()
         {
+            Locator.CurrentMutable.RegisterViewsForViewModels(Assembly.GetCallingAssembly());
+
             InitializeComponent();
 
             MainPage = new MeView();
