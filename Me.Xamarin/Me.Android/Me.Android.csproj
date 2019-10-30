@@ -88,6 +88,10 @@
     <Folder Include="Resources\drawable\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Me\Me.csproj">
+      <Project>{d8b7cd07-dcae-49fa-a60f-8b396db19383}</Project>
+      <Name>Me</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Me.Forms\Me.Forms.csproj">
       <Project>{BE1E8236-5557-41F2-8974-6E7EE55B09C2}</Project>
       <Name>Me.Forms</Name>
