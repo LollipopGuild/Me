@@ -133,4 +133,7 @@
       <Name>Me.Forms</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Icon180.png" />
+  </ItemGroup>
 </Project>
