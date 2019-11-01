@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 
 using ReactiveUI;
@@ -10,12 +11,6 @@ namespace Me
     public class MeViewModel : ReactiveObject
     {
         [Reactive]
-        public Byte[] Picture { get; set; }
-
-        [Reactive]
-        public string[] GivenNames { get; set; }
-
-        [Reactive]
-        public string FamilyName { get; set; }
+        public WalletViewModel Wallet { get; set; }
     }
 }

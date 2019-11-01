@@ -9,4 +9,8 @@
     <PackageReference Include="ReactiveUI.Fody" Version="10.5.7" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Mockup\" />
+    <Folder Include="ViewModels\" />
+  </ItemGroup>
 </Project>

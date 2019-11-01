@@ -18,8 +18,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="MeView.xaml.cs">
-      <DependentUpon>MeView.xaml</DependentUpon>
-    </Compile>
+    <Folder Include="Views\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Remove="Views\PersoanView.xaml" />
+    <EmbeddedResource Remove="MeView.xaml" />
+    <EmbeddedResource Remove="PersonaView.xaml" />
+    <EmbeddedResource Remove="MeView.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="PersonaView.xaml.cs" />
   </ItemGroup>
 </Project>
