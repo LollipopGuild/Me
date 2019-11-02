@@ -25,14 +25,32 @@ namespace Me.Forms
 
             ViewModel = new MeViewModel()
             {
-                Wallet = Mockup.Mocks.MockupWallet
+                Wallet = Mockup.Mocks.MockupWallet,
             };
+            //ViewModel.CurrentPersona = ViewModel.Wallet.Personas[1];
 
             this.WhenActivated(dispReg =>
             {
                 this.OneWayBind(ViewModel,
-                    viewModel => viewModel.Wallet.SelectedPersona,
+                    viewModel => viewModel.CurrentPersona,
                     view => view.__SelectedPersona.ViewModel)
+                    .DisposeWith(dispReg);
+
+                this.OneWayBind(ViewModel,
+                    viewModel => viewModel.CurrentPersona,
+                    view => view.__SelectedPersona.IsVisible,
+                    pers => pers != null)
+                    .DisposeWith(dispReg);
+
+                this.OneWayBind(ViewModel,
+                    viewModel => viewModel.Wallet,
+                    view => view.__Wallet.ViewModel)
+                    .DisposeWith(dispReg);
+
+                this.OneWayBind(ViewModel,
+                    viewModel => viewModel.CurrentPersona,
+                    view => view.__Wallet.IsVisible,
+                    pers => pers == null)
                     .DisposeWith(dispReg);
             });
         }

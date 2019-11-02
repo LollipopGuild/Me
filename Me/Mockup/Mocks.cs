@@ -10,11 +10,11 @@ namespace Me.Mockup
 
         static WalletViewModel CreateMockupWallet()
         {
-            var wallet = new WalletViewModel();
-            wallet.SelectedPersona = Personas.JanePDoh;
+            var wallet = new WalletViewModel() { Name = "MOCKUP" };
             wallet.Personas = new ObservableCollection<PersonaViewModel>()
             {
-                wallet.SelectedPersona
+                Personas.JanePDoh,
+                Personas.RitaHTyler
             };
             return wallet;
         }

@@ -12,5 +12,7 @@ namespace Me
     {
         [Reactive]
         public WalletViewModel Wallet { get; set; }
+        [Reactive]
+        public PersonaViewModel CurrentPersona { get; set; }
     }
 }

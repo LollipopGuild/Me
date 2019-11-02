@@ -13,7 +13,5 @@ namespace Me
         public string Name { get; set; }
         [Reactive]
         public ObservableCollection<PersonaViewModel> Personas { get; set; }
-        [Reactive]
-        public PersonaViewModel SelectedPersona { get; set; }
     }
 }

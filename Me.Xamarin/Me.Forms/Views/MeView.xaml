@@ -10,5 +10,8 @@
                        x:Class="Me.Forms.MeView"
                        x:TypeArguments="me:MeViewModel"
                        BackgroundColor="Black">
-    <mexam:PersonaView x:Name="__SelectedPersona" />
+    <Grid>
+        <mexam:WalletView x:Name="__Wallet" />
+        <mexam:PersonaView x:Name="__SelectedPersona" />
+    </Grid>
 </rui:ReactiveContentPage>
