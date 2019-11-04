@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 
+using Me.ViewModels;
+
 namespace Me.Mockup
 {
     public static class Personas

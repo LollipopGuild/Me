@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reactive.Disposables;
+
+using Xamarin.Forms;
 using ReactiveUI;
 using ReactiveUI.XamForms;
-using Xamarin.Forms;
 
-namespace Me.Forms
+using Me.ViewModels;
+
+namespace Me.Forms.Views
 {
-    public partial class PersonaView : ReactiveContentView<PersonaViewModel>
+    public partial class PersonaView : ReactiveContentPage<PersonaViewModel>
     {
         public PersonaView()
         {
@@ -37,8 +40,13 @@ namespace Me.Forms
                     claims => claims == null ? "" :
                         claims.FirstOrDefault(c => c.Name == "Name_Family")?.Value)
                     .DisposeWith(dispReg);
-            });
 
+                this.OneWayBind(ViewModel,
+                    viewModel => viewModel.NavToWallet,
+                    view => view.__Picture.Command)
+                    .DisposeWith(dispReg);
+
+            });
         }
     }
 }

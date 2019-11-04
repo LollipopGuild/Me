@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Me.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
@@ -14,7 +15,7 @@ namespace Me.Mockup
             wallet.Personas = new ObservableCollection<PersonaViewModel>()
             {
                 Personas.JanePDoh,
-                Personas.RitaHTyler
+                Personas.RitaHTyler,
             };
             return wallet;
         }

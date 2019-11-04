@@ -16,10 +16,6 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Me\Me.csproj" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Views\" />
-  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Remove="Views\PersoanView.xaml" />
     <EmbeddedResource Remove="MeView.xaml" />
@@ -28,5 +24,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="PersonaView.xaml.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Views\ClaimView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

@@ -1,13 +1,19 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Collections.Generic;
 using System.Reactive.Disposables;
+using System.Reactive.Linq;
+
+using Xamarin.Forms;
 using ReactiveUI;
 using ReactiveUI.XamForms;
-using Xamarin.Forms;
 
-namespace Me.Forms
+using Me.ViewModels;
+using Splat;
+
+namespace Me.Forms.Views
 {
-    public partial class WalletView : ReactiveContentView<WalletViewModel>
+    public partial class WalletView : ReactiveContentPage<WalletViewModel>
     {
         public WalletView()
         {
@@ -15,15 +21,23 @@ namespace Me.Forms
 
             this.WhenActivated(dispReg =>
             {
-                this.OneWayBind(ViewModel,
-                        viewModel => viewModel.Name,
-                        view => view.__Name.Text)
+                this.OneWayBind(ViewModel, vm => vm.Name, v => v.__Name.Text)
                     .DisposeWith(dispReg);
 
-                this.OneWayBind(ViewModel,
-                        viewModel => viewModel.Personas,
-                        view => view.__Personas.ItemsSource)
+                this.OneWayBind(ViewModel, vm => vm.Personas, v => v.__Personas.ItemsSource)
                     .DisposeWith(dispReg);
+
+                this.Bind(ViewModel, vm => vm.SelectedPersona, v => v.__Personas.SelectedItem)
+                    .DisposeWith(dispReg);
+
+                //this.WhenAnyValue(x => x.ViewModel.SelectedPersona)
+                //        .Where(x => x != null)
+                //        .Subscribe(p =>
+                //        {
+                //            Debug.WriteLine($"Persona selected: {p.Title}");
+                //            __Personas.SelectedItem = null;
+                //        })
+                //        .DisposeWith(dispReg);
             });
         }
     }

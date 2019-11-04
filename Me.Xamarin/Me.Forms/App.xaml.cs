@@ -7,17 +7,22 @@ using Xamarin.Forms.Xaml;
 using ReactiveUI;
 using Splat;
 
+using Me.Forms.Views;
+using Me.ViewModels;
+
 namespace Me.Forms
 {
     public partial class App : Application
     {
+        AppBootstrapper _Bootstrapper;
+
         public App()
         {
-            Locator.CurrentMutable.RegisterViewsForViewModels(Assembly.GetCallingAssembly());
+            _Bootstrapper = new AppBootstrapper();
 
             InitializeComponent();
 
-            MainPage = new MeView();
+            MainPage = new WalletView() { ViewModel = Locator.Current.GetService<WalletViewModel>() };
         }
 
         protected override void OnStart()

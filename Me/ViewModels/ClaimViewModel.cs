@@ -2,7 +2,7 @@
 using ReactiveUI;
 using ReactiveUI.Fody.Helpers;
 
-namespace Me
+namespace Me.ViewModels
 {
     public class ClaimViewModel : ReactiveObject
     {

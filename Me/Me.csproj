@@ -11,6 +11,5 @@
 
   <ItemGroup>
     <Folder Include="Mockup\" />
-    <Folder Include="ViewModels\" />
   </ItemGroup>
 </Project>
