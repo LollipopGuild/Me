@@ -31,10 +31,10 @@ namespace Me.ViewModels
             NavToPersona = ReactiveCommand.CreateFromObservable<IRoutableViewModel, Unit>(rvm => 
                                 HostScreen.Router.NavigateAndReset.Execute(rvm).Select(_ => Unit.Default));
 
-            this.WhenAnyValue(x => x.SelectedPersona)
-                .Where(x => x != null)
-                //.StartWith(Personas.First())
-                .InvokeCommand<PersonaViewModel>(NavToPersona);
+            //this.WhenAnyValue(x => x.SelectedPersona)
+            //    .Where(x => x != null)
+            //    //.StartWith(Personas.First())
+            //    .InvokeCommand<PersonaViewModel>(NavToPersona);
         }
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.ObjectModel;
 
 using Me.ViewModels;
 
-namespace Me.Mockup
+namespace Me.Mockup.Fakes
 {
     public static class Personas
     {

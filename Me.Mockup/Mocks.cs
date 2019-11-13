@@ -1,7 +1,8 @@
-﻿using Me.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using Me.ViewModels;
+using Me.Mockup.Fakes;
 
 namespace Me.Mockup
 {

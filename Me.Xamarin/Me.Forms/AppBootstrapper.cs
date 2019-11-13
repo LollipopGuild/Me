@@ -8,6 +8,7 @@ using Splat;
 
 using Me.Forms.Views;
 using Me.ViewModels;
+using Me.Mockup;
 
 namespace Me.Forms
 {
@@ -18,12 +19,12 @@ namespace Me.Forms
         public AppBootstrapper()
         {
             Locator.CurrentMutable.RegisterConstant(this, typeof(IScreen));
-            Locator.CurrentMutable.RegisterConstant(Mockup.Mocks.MockupWallet, typeof(WalletViewModel)); // register mockup wallet singleton
+            // inject mockup wallet for now
+            Locator.CurrentMutable.RegisterConstant(Mocks.MockupWallet, typeof(WalletViewModel));
 
             RegisterViews();
             RegisterViewModels();
-
-            // Locator.CurrentMutable.RegisterViewsForViewModels(Assembly.GetCallingAssembly());
+            Locator.CurrentMutable.RegisterViewsForViewModels(Assembly.GetCallingAssembly());
         }
 
         private void RegisterViews()

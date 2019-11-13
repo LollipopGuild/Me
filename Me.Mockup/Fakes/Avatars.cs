@@ -1,5 +1,5 @@
 ﻿using System;
-namespace Me.Mockup
+namespace Me.Mockup.Fakes
 {
     public static class Avatars
     {

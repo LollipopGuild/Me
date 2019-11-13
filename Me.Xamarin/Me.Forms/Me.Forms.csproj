@@ -14,6 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Me.Mockup\Me.Mockup.csproj" />
     <ProjectReference Include="..\..\Me\Me.csproj" />
   </ItemGroup>
   <ItemGroup>

@@ -8,8 +8,4 @@
     <PackageReference Include="ReactiveUI" Version="10.5.7" />
     <PackageReference Include="ReactiveUI.Fody" Version="10.5.7" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Mockup\" />
-  </ItemGroup>
 </Project>
