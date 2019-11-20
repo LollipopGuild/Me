@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Reflection;
 using System.Text;
-
+using XamForms = Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
+using ReactiveUI.XamForms;
 using ReactiveUI;
 using Splat;
 
@@ -14,17 +16,23 @@ namespace Me.Forms
 {
     public class AppBootstrapper : IScreen
     {
-        public RoutingState Router => new RoutingState();
+        public RoutingState Router { get; }
 
         public AppBootstrapper()
         {
+            Router = new RoutingState();
+
             Locator.CurrentMutable.RegisterConstant(this, typeof(IScreen));
             // inject mockup wallet for now
-            Locator.CurrentMutable.RegisterConstant(Mocks.MockupWallet, typeof(WalletViewModel));
+            //Locator.CurrentMutable.RegisterConstant(Mocks.MockupWallet, typeof(WalletViewModel));
 
             RegisterViews();
             RegisterViewModels();
-            Locator.CurrentMutable.RegisterViewsForViewModels(Assembly.GetCallingAssembly());
+            //Locator.CurrentMutable.RegisterViewsForViewModels(Assembly.GetCallingAssembly());
+
+            Router.NavigateAndReset
+                  .Execute(Mocks.MockupWallet)
+                  .Subscribe();
         }
 
         private void RegisterViews()
@@ -42,6 +50,17 @@ namespace Me.Forms
             // This helps us avoid a manual cast to IRoutableViewModel when calling Router.Navigate.Execute(...)
             Locator.CurrentMutable.Register(() => new WalletViewModel(), typeof(IRoutableViewModel), typeof(WalletViewModel).FullName);
             Locator.CurrentMutable.Register(() => new PersonaViewModel(), typeof(IRoutableViewModel), typeof(PersonaViewModel).FullName);
+        }
+
+        public static XamForms.Page CreateMainPage()
+        {
+            // NB: This returns the opening page that the platform-specific
+            // boilerplate code will look for. It will know to find us because
+            // we've registered our AppBootstrapp IScreen.
+            var page = new RoutedViewHost();
+            page.On<XamForms.PlatformConfiguration.iOS>().SetUseSafeArea(true);
+            XamForms.NavigationPage.SetHasNavigationBar(page, false);
+            return page;
         }
     }
 }

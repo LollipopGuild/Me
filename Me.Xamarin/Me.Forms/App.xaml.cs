@@ -18,11 +18,11 @@ namespace Me.Forms
 
         public App()
         {
-            _Bootstrapper = new AppBootstrapper();
 
             InitializeComponent();
 
-            MainPage = new WalletView() { ViewModel = Locator.Current.GetService<WalletViewModel>() };
+            _Bootstrapper = new AppBootstrapper();
+            MainPage = AppBootstrapper.CreateMainPage();
         }
 
         protected override void OnStart()

@@ -1,12 +1,24 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<rui:ReactiveContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<mev:ContentPageBase xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:rui="clr-namespace:ReactiveUI.XamForms;assembly=ReactiveUI.XamForms"
              xmlns:mevm="clr-namespace:Me.ViewModels;assembly=Me"
+             xmlns:mev="clr-namespace:Me.Forms.Views"
              x:TypeArguments="mevm:WalletViewModel"
              x:Class="Me.Forms.Views.WalletView">
-    <StackLayout>
-        <Label x:Name="__Name" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
-        <ListView x:Name="__Personas" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand"/>
+    <StackLayout BackgroundColor="Black">
+        <Label x:Name="__Name"
+            HorizontalOptions="CenterAndExpand" VerticalOptions="Center"
+            TextColor="AliceBlue" FontSize="32"
+            HorizontalTextAlignment="Center"/>
+        <ListView x:Name="__Personas" RowHeight="70"
+                HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand"
+                SeparatorVisibility="None">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <mev:PersonaItemView />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </StackLayout>
-</rui:ReactiveContentPage>
+</mev:ContentPageBase>

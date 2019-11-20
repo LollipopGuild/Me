@@ -18,16 +18,16 @@
     <ProjectReference Include="..\..\Me\Me.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Remove="Views\PersoanView.xaml" />
-    <EmbeddedResource Remove="MeView.xaml" />
-    <EmbeddedResource Remove="PersonaView.xaml" />
-    <EmbeddedResource Remove="MeView.xaml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Remove="PersonaView.xaml.cs" />
-  </ItemGroup>
-  <ItemGroup>
+    <EmbeddedResource Update="Views\WalletView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\PersonaView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\ClaimView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\PersonaItemView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

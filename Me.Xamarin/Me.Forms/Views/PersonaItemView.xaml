@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rui:ReactiveViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:rui="clr-namespace:ReactiveUI.XamForms;assembly=ReactiveUI.XamForms"
+             xmlns:mevm="clr-namespace:Me.ViewModels;assembly=Me"
+             x:TypeArguments="mevm:PersonaViewModel"
+             x:Class="Me.Forms.Views.PersonaItemView">
+  <ViewCell.View>
+      <StackLayout Orientation="Horizontal" Padding="5"
+                   VerticalOptions="Center" HorizontalOptions="CenterAndExpand">
+            <ImageButton x:Name="__Picture"
+                     HorizontalOptions="Center" VerticalOptions="CenterAndExpand"
+                     HeightRequest="50" WidthRequest="50" CornerRadius="25"/>
+            <Label x:Name="__GivenNames"
+               FontSize="24" TextColor="AliceBlue"
+               VerticalOptions="CenterAndExpand" HorizontalTextAlignment="Start"/>
+            <Label x:Name="__FamilyName"
+               FontSize="24" TextColor="AliceBlue"
+               VerticalOptions="CenterAndExpand" HorizontalTextAlignment="Start"/>
+        </StackLayout>
+  </ViewCell.View>
+</rui:ReactiveViewCell>

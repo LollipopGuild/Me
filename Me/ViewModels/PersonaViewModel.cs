@@ -9,11 +9,8 @@ using Splat;
 
 namespace Me.ViewModels
 {
-    public class PersonaViewModel : ReactiveObject, IRoutableViewModel
+    public class PersonaViewModel : RoutableViewModelBase
     {
-        public string UrlPathSegment => "wallet";
-        public IScreen HostScreen => Locator.Current.GetService<IScreen>();
-
         [Reactive]
         public byte[] Avatar { get; set; }
         [Reactive]
@@ -22,7 +19,7 @@ namespace Me.ViewModels
         public ObservableCollection<ClaimViewModel> Claims { get; set; }
         public ReactiveCommand<IRoutableViewModel, Unit> NavToWallet { get; set; }
 
-        public PersonaViewModel()
+        public PersonaViewModel() : base("persona")
         {
             NavToWallet = ReactiveCommand.CreateFromObservable<IRoutableViewModel, Unit>(rvm =>
             {

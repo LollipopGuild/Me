@@ -4,7 +4,7 @@ using ReactiveUI.Fody.Helpers;
 
 namespace Me.ViewModels
 {
-    public class ClaimViewModel : ReactiveObject
+    public class ClaimViewModel : ViewModelBase
     {
         [Reactive]
         public string Name { get; set; }

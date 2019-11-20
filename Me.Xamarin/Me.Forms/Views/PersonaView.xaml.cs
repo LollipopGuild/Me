@@ -12,7 +12,7 @@ using Me.ViewModels;
 
 namespace Me.Forms.Views
 {
-    public partial class PersonaView : ReactiveContentPage<PersonaViewModel>
+    public partial class PersonaView : ContentPageBase<PersonaViewModel>
     {
         public PersonaView()
         {
