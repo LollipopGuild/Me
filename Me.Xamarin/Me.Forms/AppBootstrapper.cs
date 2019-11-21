@@ -23,8 +23,8 @@ namespace Me.Forms
             Router = new RoutingState();
 
             Locator.CurrentMutable.RegisterConstant(this, typeof(IScreen));
-            // inject mockup wallet for now
-            //Locator.CurrentMutable.RegisterConstant(Mocks.MockupWallet, typeof(WalletViewModel));
+            // inject constant mockup wallet for now
+            Locator.CurrentMutable.RegisterConstant(Mocks.MockupWallet, typeof(WalletViewModel));
 
             RegisterViews();
             RegisterViewModels();
