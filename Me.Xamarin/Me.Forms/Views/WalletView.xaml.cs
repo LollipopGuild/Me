@@ -15,12 +15,14 @@ namespace Me.Forms.Views
 {
     public partial class WalletView : ContentPageBase<WalletViewModel>
     {
-        public WalletView()
+        public WalletView() : base(false)
         {
             InitializeComponent();
 
             this.WhenActivated(dispReg =>
             {
+                ViewModel.SelectedPersona = null;
+
                 this.OneWayBind(ViewModel, vm => vm.Name, v => v.__Name.Text)
                     .DisposeWith(dispReg);
 
@@ -29,17 +31,15 @@ namespace Me.Forms.Views
 
                 this.Bind(ViewModel, vm => vm.SelectedPersona, v => v.__Personas.SelectedItem)
                     .DisposeWith(dispReg);
-
-                this.WhenAnyValue(x => x.ViewModel.SelectedPersona)
-                        .Where(x => x != null)
-                        .Subscribe(p =>
-                        {
-                            Debug.WriteLine($"Persona selected: {p.Title}");
-                            //__Personas.SelectedItem = null;
-                            //ViewModel.NavToPersona.Execute(p);
-                        })
-                        .DisposeWith(dispReg);
             });
+
+            this.WhenAnyValue(x => x.ViewModel.SelectedPersona)
+                .Where(x => x != null)
+                .Subscribe(p =>
+                {
+                    Debug.WriteLine($"Persona selected: {p.Title}");
+                });
+
         }
     }
 }

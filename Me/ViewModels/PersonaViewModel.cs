@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Reactive;
 using System.Reactive.Linq;
 
@@ -17,16 +18,16 @@ namespace Me.ViewModels
         public string Title { get; set; }
         [Reactive]
         public ObservableCollection<ClaimViewModel> Claims { get; set; }
-        public ReactiveCommand<IRoutableViewModel, Unit> NavToWallet { get; set; }
+        public ReactiveCommand<Unit, IRoutableViewModel> NavToWallet { get; set; }
 
         public PersonaViewModel() : base("persona")
         {
-            NavToWallet = ReactiveCommand.CreateFromObservable<IRoutableViewModel, Unit>(rvm =>
+            NavToWallet = ReactiveCommand.CreateFromObservable<Unit, IRoutableViewModel>(_ =>
             {
                 var wallet = Locator.Current.GetService<WalletViewModel>();
-                wallet.SelectedPersona = null;
-                return HostScreen.Router.NavigateAndReset.Execute(wallet).Select(_ => Unit.Default);
+                return HostScreen.Router.NavigateAndReset.Execute(wallet);
             });
+            NavToWallet.Subscribe();
         }
     }
 }

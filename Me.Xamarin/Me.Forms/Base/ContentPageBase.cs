@@ -12,9 +12,9 @@ namespace Me.Forms.Views
     public class ContentPageBase<TViewModel> : ReactiveContentPage<TViewModel>
              where TViewModel : ViewModelBase
     {
-        public ContentPageBase()
+        public ContentPageBase(bool showNavBar)
         {
-            XamForms.NavigationPage.SetHasNavigationBar(this, false);
+            XamForms.NavigationPage.SetHasNavigationBar(this, showNavBar);
             this.BackgroundColor = MeColors.bodyBG;
             On<XamForms.PlatformConfiguration.iOS>().SetUseSafeArea(true);
         }

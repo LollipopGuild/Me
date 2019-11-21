@@ -21,17 +21,12 @@ namespace Me.ViewModels
         [Reactive]
         public PersonaViewModel SelectedPersona { get; set; }
 
-        public ReactiveCommand<IRoutableViewModel, Unit> NavToPersona { get; }
-
         public WalletViewModel() : base("wallet")
         {
-            NavToPersona = ReactiveCommand.CreateFromObservable<IRoutableViewModel, Unit>(rvm => 
-                                HostScreen.Router.NavigateAndReset.Execute(rvm).Select(_ => Unit.Default));
-
-            //this.WhenAnyValue(x => x.SelectedPersona)
-            //    .Where(x => x != null)
-            //    //.StartWith(Personas.First())
-            //    .InvokeCommand<PersonaViewModel>(NavToPersona);
+            this.WhenAnyValue(x => x.SelectedPersona)
+                .Where(x => x != null)
+                .SelectMany(x => HostScreen.Router.NavigateAndReset.Execute(x))
+                .Subscribe();
         }
     }
 }

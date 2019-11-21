@@ -14,7 +14,7 @@ namespace Me.Forms.Views
 {
     public partial class PersonaView : ContentPageBase<PersonaViewModel>
     {
-        public PersonaView()
+        public PersonaView() : base(false)
         {
             InitializeComponent();
 
