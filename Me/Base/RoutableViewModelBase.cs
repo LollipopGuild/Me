@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reactive.Concurrency;
 using System.Text;
 
 using ReactiveUI;
@@ -9,13 +10,16 @@ namespace Me.ViewModels
 {
     public abstract class RoutableViewModelBase : ViewModelBase, IRoutableViewModel
     {
-        public string UrlPathSegment { get; }
+        public string UrlPathSegment { get; protected set; }
         public IScreen HostScreen { get; }
 
-        public RoutableViewModelBase(string pathSegment)
+        public RoutableViewModelBase(string pathSegment,
+            IScreen hostScreen = null, 
+            IScheduler mainThreadScheduler = null, 
+            IScheduler taskPoolScheduler = null) : base(mainThreadScheduler, taskPoolScheduler)
         {
             UrlPathSegment = pathSegment;
-            HostScreen = Locator.Current.GetService<IScreen>();
+            HostScreen = hostScreen ?? Locator.Current.GetService<IScreen>();
         }
     }
 }
