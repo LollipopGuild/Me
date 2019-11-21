@@ -43,7 +43,7 @@ namespace Me.Forms.Views
 
                 this.OneWayBind(ViewModel,
                     viewModel => viewModel.NavToWallet,
-                    view => view.__Picture.Command)
+                    view => view.__Close.Command)
                     .DisposeWith(dispReg);
 
             });

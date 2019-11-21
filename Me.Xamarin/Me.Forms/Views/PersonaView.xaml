@@ -1,12 +1,13 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <mev:ContentPageBase xmlns="http://xamarin.com/schemas/2014/forms"
-                         xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-                         xmlns:rui="clr-namespace:ReactiveUI.XamForms;assembly=ReactiveUI.XamForms"
-                         xmlns:mevm="clr-namespace:Me.ViewModels;assembly=Me"
-                         xmlns:mev="clr-namespace:Me.Forms.Views"
-                         x:TypeArguments="mevm:PersonaViewModel"
-                         x:Class="Me.Forms.Views.PersonaView">
-    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                     xmlns:rui="clr-namespace:ReactiveUI.XamForms;assembly=ReactiveUI.XamForms"
+                     xmlns:mevm="clr-namespace:Me.ViewModels;assembly=Me"
+                     xmlns:mev="clr-namespace:Me.Forms.Views"
+                     xmlns:me="clr-namespace:Me"
+                     x:TypeArguments="mevm:PersonaViewModel"
+                     x:Class="Me.Forms.Views.PersonaView">
+    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand">
         <ImageButton x:Name="__Picture"
                      HorizontalOptions="Center" VerticalOptions="Center"
                      HeightRequest="280" WidthRequest="280" CornerRadius="140" Margin="20"/>
@@ -16,5 +17,13 @@
         <Label x:Name="__FamilyName"
                FontSize="48" TextColor="AliceBlue"
                HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+        <BoxView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            
+        </BoxView>
+        <Button x:Name="__Close" Text="Close"
+                Padding="15" FontSize="24" CornerRadius="25"
+                VerticalOptions="End" HorizontalOptions="Center"
+                BackgroundColor="{Static me:MeColors.headerBG}"
+                TextColor="{Static me:MeColors.headerFG}"/>
     </StackLayout>
 </mev:ContentPageBase>
