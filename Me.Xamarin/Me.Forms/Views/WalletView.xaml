@@ -4,12 +4,13 @@
              xmlns:rui="clr-namespace:ReactiveUI.XamForms;assembly=ReactiveUI.XamForms"
              xmlns:mevm="clr-namespace:Me.ViewModels;assembly=Me"
              xmlns:mev="clr-namespace:Me.Forms.Views"
+             xmlns:me="clr-namespace:Me"
              x:TypeArguments="mevm:WalletViewModel"
              x:Class="Me.Forms.Views.WalletView">
     <StackLayout BackgroundColor="Black">
-        <Label x:Name="__Name"
+        <Label Text="Vault"
             HorizontalOptions="CenterAndExpand" VerticalOptions="Center"
-            TextColor="AliceBlue" FontSize="32"
+            TextColor="{Static me:MeColors.bodyFG}" FontSize="24" Padding="5"
             HorizontalTextAlignment="Center"/>
         <ListView x:Name="__Personas" RowHeight="70"
                 HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand"

@@ -12,10 +12,10 @@
                      HorizontalOptions="Center" VerticalOptions="Center"
                      HeightRequest="280" WidthRequest="280" CornerRadius="140" Margin="20"/>
         <Label x:Name="__GivenNames"
-               FontSize="48" TextColor="AliceBlue"
+               FontSize="36" TextColor="{Static me:MeColors.bodyFG}"
                HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
         <Label x:Name="__FamilyName"
-               FontSize="48" TextColor="AliceBlue"
+               FontSize="36" TextColor="{Static me:MeColors.bodyFG}"
                HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
         <Image x:Name="__QRCode" 
                VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>

@@ -23,9 +23,6 @@ namespace Me.Forms.Views
             {
                 ViewModel.SelectedPersona = null;
 
-                this.OneWayBind(ViewModel, vm => vm.Name, v => v.__Name.Text)
-                    .DisposeWith(dispReg);
-
                 this.OneWayBind(ViewModel, vm => vm.Personas, v => v.__Personas.ItemsSource)
                     .DisposeWith(dispReg);
 
