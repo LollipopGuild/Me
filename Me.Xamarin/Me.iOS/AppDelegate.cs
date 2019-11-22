@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Foundation;
+using Splat;
 using UIKit;
+
+using Me.iOS.Services;
+using Me.Services;
 
 namespace Me.iOS
 {
@@ -22,10 +26,25 @@ namespace Me.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            RegisterServices();
+
             global::Xamarin.Forms.Forms.Init();
+
+            InitializeLibraries();
+
             LoadApplication(new Me.Forms.App());
 
             return base.FinishedLaunching(app, options);
+        }
+
+        private void RegisterServices()
+        {
+            Locator.CurrentMutable.Register(() => new QRCodeService(), typeof(IQRCodeService));
+        }
+
+        private void InitializeLibraries()
+        {
+            ZXing.Net.Mobile.Forms.iOS.Platform.Init();
         }
     }
 }

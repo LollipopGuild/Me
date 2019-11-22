@@ -7,6 +7,11 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 
+using Splat;
+
+using Me.Android.Services;
+using Me.Services;
+
 namespace Me.Android
 {
     [Activity(Label = "Me?", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
@@ -17,10 +22,15 @@ namespace Me.Android
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 
+            RegisterServices();
+
             base.OnCreate(savedInstanceState);
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+
+            InitializeLibraries();
+
             LoadApplication(new Me.Forms.App());
         }
 
@@ -29,5 +39,16 @@ namespace Me.Android
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
+
+        private void RegisterServices()
+        {
+            Locator.CurrentMutable.Register(() => new QRCodeService(), typeof(IQRCodeService));
+        }
+
+        private void InitializeLibraries()
+        {
+            ZXing.Net.Mobile.Forms.Android.Platform.Init();
+        }
+
     }
 }

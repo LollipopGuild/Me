@@ -17,9 +17,8 @@
         <Label x:Name="__FamilyName"
                FontSize="48" TextColor="AliceBlue"
                HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
-        <BoxView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-            
-        </BoxView>
+        <Image x:Name="__QRCode" 
+               VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
         <Button x:Name="__Close" Text="Close"
                 Padding="15" FontSize="24" CornerRadius="25"
                 VerticalOptions="End" HorizontalOptions="Center"
