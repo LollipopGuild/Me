@@ -13,6 +13,6 @@ namespace Me.ViewModels
     public class MeViewModel : ViewModelBase
     {
         [Reactive]
-        public WalletViewModel Wallet { get; set; }
+        public VaultViewModel Wallet { get; set; }
     }
 }

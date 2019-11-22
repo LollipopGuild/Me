@@ -5,8 +5,8 @@
              xmlns:mevm="clr-namespace:Me.ViewModels;assembly=Me"
              xmlns:mev="clr-namespace:Me.Forms.Views"
              xmlns:me="clr-namespace:Me"
-             x:TypeArguments="mevm:WalletViewModel"
-             x:Class="Me.Forms.Views.WalletView">
+             x:TypeArguments="mevm:VaultViewModel"
+             x:Class="Me.Forms.Views.VaultView">
     <StackLayout BackgroundColor="Black">
         <Label Text="My Personas"
             HorizontalOptions="CenterAndExpand" VerticalOptions="Center"

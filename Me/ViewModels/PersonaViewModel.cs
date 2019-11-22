@@ -24,7 +24,7 @@ namespace Me.ViewModels
         {
             NavToWallet = ReactiveCommand.CreateFromObservable<Unit, IRoutableViewModel>(_ =>
             {
-                var wallet = Locator.Current.GetService<WalletViewModel>();
+                var wallet = Locator.Current.GetService<VaultViewModel>();
                 return HostScreen.Router.NavigateAndReset.Execute(wallet);
             });
             NavToWallet.Subscribe();

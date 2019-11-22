@@ -18,8 +18,14 @@
     <ProjectReference Include="..\..\Me.Mockup\Me.Mockup.csproj" />
     <ProjectReference Include="..\..\Me\Me.csproj" />
   </ItemGroup>
+
   <ItemGroup>
-    <EmbeddedResource Update="Views\WalletView.xaml">
+    <Compile Update="Views\VaultView.xaml.cs">
+      <DependentUpon>VaultView.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Views\VaultView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\PersonaView.xaml">

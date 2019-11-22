@@ -24,7 +24,7 @@ namespace Me.Forms
 
             Locator.CurrentMutable.RegisterConstant(this, typeof(IScreen));
             // inject constant mockup wallet for now
-            Locator.CurrentMutable.RegisterConstant(Mocks.MockupWallet, typeof(WalletViewModel));
+            Locator.CurrentMutable.RegisterConstant(Mocks.MockupWallet, typeof(VaultViewModel));
 
             RegisterViews();
             RegisterViewModels();
@@ -38,7 +38,7 @@ namespace Me.Forms
         private void RegisterViews()
         {
             // pages (routable)
-            Locator.CurrentMutable.Register(() => new WalletView(), typeof(IViewFor<WalletViewModel>));
+            Locator.CurrentMutable.Register(() => new VaultView(), typeof(IViewFor<VaultViewModel>));
             Locator.CurrentMutable.Register(() => new PersonaView(), typeof(IViewFor<PersonaViewModel>));
             // cells
             Locator.CurrentMutable.Register(() => new ClaimView(), typeof(IViewFor<ClaimViewModel>));
@@ -48,7 +48,7 @@ namespace Me.Forms
         {
             // Here, we use contracts to distinguish which routable view model we want to instantiate.
             // This helps us avoid a manual cast to IRoutableViewModel when calling Router.Navigate.Execute(...)
-            Locator.CurrentMutable.Register(() => new WalletViewModel(), typeof(IRoutableViewModel), typeof(WalletViewModel).FullName);
+            Locator.CurrentMutable.Register(() => new VaultViewModel(), typeof(IRoutableViewModel), typeof(VaultViewModel).FullName);
             Locator.CurrentMutable.Register(() => new PersonaViewModel(), typeof(IRoutableViewModel), typeof(PersonaViewModel).FullName);
         }
 

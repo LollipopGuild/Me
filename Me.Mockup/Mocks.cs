@@ -8,11 +8,11 @@ namespace Me.Mockup
 {
     public static class Mocks
     {
-        public static WalletViewModel MockupWallet => CreateMockupWallet();
+        public static VaultViewModel MockupWallet => CreateMockupWallet();
 
-        static WalletViewModel CreateMockupWallet()
+        static VaultViewModel CreateMockupWallet()
         {
-            var wallet = new WalletViewModel() { Name = "MOCKUP" };
+            var wallet = new VaultViewModel() { Name = "MOCKUP" };
             wallet.Personas = new ObservableCollection<PersonaViewModel>()
             {
                 Personas.JanePDoh,

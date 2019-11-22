@@ -13,9 +13,9 @@ using Splat;
 
 namespace Me.Forms.Views
 {
-    public partial class WalletView : ContentPageBase<WalletViewModel>
+    public partial class VaultView : ContentPageBase<VaultViewModel>
     {
-        public WalletView() : base(false)
+        public VaultView() : base(false)
         {
             InitializeComponent();
 

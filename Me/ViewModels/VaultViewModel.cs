@@ -10,7 +10,7 @@ using Splat;
 
 namespace Me.ViewModels
 {
-    public class WalletViewModel : RoutableViewModelBase
+    public class VaultViewModel : RoutableViewModelBase
     {
         [Reactive]
         public string[] Seed { get; set; }
@@ -21,7 +21,7 @@ namespace Me.ViewModels
         [Reactive]
         public PersonaViewModel SelectedPersona { get; set; }
 
-        public WalletViewModel() : base("wallet")
+        public VaultViewModel() : base("wallet")
         {
             this.WhenAnyValue(x => x.SelectedPersona)
                 .Where(x => x != null)
