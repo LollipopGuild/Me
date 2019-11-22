@@ -10,7 +10,7 @@
     <StackLayout BackgroundColor="Black">
         <Label Text="My Personas"
             HorizontalOptions="CenterAndExpand" VerticalOptions="Center"
-            TextColor="{Static me:MeColors.action}" FontSize="24" Padding="5"
+            TextColor="{Static me:AppColors.action}" FontSize="24" Padding="5"
             HorizontalTextAlignment="Center"/>
         <ListView x:Name="__Personas" RowHeight="90"
                 HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand"

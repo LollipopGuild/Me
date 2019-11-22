@@ -17,10 +17,10 @@
                      HeightRequest="70" WidthRequest="70" CornerRadius="35"/>
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="10,0">
                 <Label x:Name="__GivenNames"
-                       FontSize="32" TextColor="{Static me:MeColors.bodyFG}"
+                       FontSize="32" TextColor="{Static me:AppColors.bodyFG}"
                        VerticalOptions="CenterAndExpand" HorizontalTextAlignment="Start"/>
                 <Label x:Name="__FamilyName"
-                       FontSize="32" TextColor="{Static me:MeColors.bodyFG}"
+                       FontSize="32" TextColor="{Static me:AppColors.bodyFG}"
                        VerticalOptions="CenterAndExpand" HorizontalTextAlignment="Start"/>
             </StackLayout>
         </StackLayout>

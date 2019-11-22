@@ -15,7 +15,7 @@ namespace Me.Forms.Views
         public ContentPageBase(bool showNavBar)
         {
             XamForms.NavigationPage.SetHasNavigationBar(this, showNavBar);
-            this.BackgroundColor = MeColors.bodyBG;
+            this.BackgroundColor = AppColors.bodyBG;
             On<XamForms.PlatformConfiguration.iOS>().SetUseSafeArea(true);
         }
     }

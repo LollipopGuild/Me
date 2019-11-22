@@ -5,7 +5,7 @@ using Xamarin.Forms;
 
 namespace Me
 {
-    public static class MeColors
+    public static class AppColors
     {
         public static Color selection => Color.FromHex("#0F72CC");
         public static Color bodyBG => Color.FromHex("#101010");

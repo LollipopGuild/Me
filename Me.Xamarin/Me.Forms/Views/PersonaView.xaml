@@ -14,10 +14,10 @@
                      HeightRequest="280" WidthRequest="280" CornerRadius="140" Margin="10"/>
         <StackLayout Margin="5" Orientation="Horizontal" HorizontalOptions="Center">
             <Label x:Name="__GivenNames"
-               FontSize="36" TextColor="{Static me:MeColors.bodyFG}"
+               FontSize="36" TextColor="{Static me:AppColors.bodyFG}"
                HorizontalTextAlignment="Center"/>
             <Label x:Name="__FamilyName"
-               FontSize="36" TextColor="{Static me:MeColors.bodyFG}"
+               FontSize="36" TextColor="{Static me:AppColors.bodyFG}"
                HorizontalTextAlignment="Center"/>
         </StackLayout>
         <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
@@ -27,6 +27,6 @@
         <ctrls:MeIconButton x:Name="__Close" Text="{Static me:AppIcons.Close}"
                             Padding="15" FontSize="42"
                             VerticalOptions="End" HorizontalOptions="Center"
-                            TextColor="{Static me:MeColors.headerFG}"/>
+                            TextColor="{Static me:AppColors.headerFG}"/>
     </StackLayout>
 </mev:ContentPageBase>
