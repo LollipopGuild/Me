@@ -5,6 +5,7 @@
                      xmlns:mevm="clr-namespace:Me.ViewModels;assembly=Me"
                      xmlns:mev="clr-namespace:Me.Forms.Views"
                      xmlns:me="clr-namespace:Me"
+                     xmlns:ctrls="clr-namespace:Me.Forms.Controls"
                      x:TypeArguments="mevm:PersonaViewModel"
                      x:Class="Me.Forms.Views.PersonaView">
     <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand">
@@ -23,10 +24,9 @@
             <Image x:Name="__QRCode" HeightRequest="200" WidthRequest="200" Aspect="AspectFit"
                VerticalOptions="Center" HorizontalOptions="Center"/>
         </Grid>
-        <Button x:Name="__Close" Text="Close"
-                Padding="15" FontSize="24" CornerRadius="25"
-                VerticalOptions="End" HorizontalOptions="Center"
-                BackgroundColor="{Static me:MeColors.headerBG}"
-                TextColor="{Static me:MeColors.headerFG}"/>
+        <ctrls:MeIconButton x:Name="__Close" Text="{Static me:AppIcons.Close}"
+                            Padding="15" FontSize="42"
+                            VerticalOptions="End" HorizontalOptions="Center"
+                            TextColor="{Static me:MeColors.headerFG}"/>
     </StackLayout>
 </mev:ContentPageBase>
