@@ -8,9 +8,9 @@
              x:TypeArguments="mevm:WalletViewModel"
              x:Class="Me.Forms.Views.WalletView">
     <StackLayout BackgroundColor="Black">
-        <Label Text="Vault"
+        <Label Text="My Personas"
             HorizontalOptions="CenterAndExpand" VerticalOptions="Center"
-            TextColor="{Static me:MeColors.bodyFG}" FontSize="24" Padding="5"
+            TextColor="{Static me:MeColors.action}" FontSize="24" Padding="5"
             HorizontalTextAlignment="Center"/>
         <ListView x:Name="__Personas" RowHeight="70"
                 HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand"
