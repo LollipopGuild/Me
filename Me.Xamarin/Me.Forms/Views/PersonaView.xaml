@@ -10,15 +10,19 @@
     <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand">
         <ImageButton x:Name="__Picture"
                      HorizontalOptions="Center" VerticalOptions="Center"
-                     HeightRequest="280" WidthRequest="280" CornerRadius="140" Margin="20"/>
-        <Label x:Name="__GivenNames"
+                     HeightRequest="280" WidthRequest="280" CornerRadius="140" Margin="10"/>
+        <StackLayout Margin="5" Orientation="Horizontal" HorizontalOptions="Center">
+            <Label x:Name="__GivenNames"
                FontSize="36" TextColor="{Static me:MeColors.bodyFG}"
-               HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
-        <Label x:Name="__FamilyName"
+               HorizontalTextAlignment="Center"/>
+            <Label x:Name="__FamilyName"
                FontSize="36" TextColor="{Static me:MeColors.bodyFG}"
-               HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
-        <Image x:Name="__QRCode" 
-               VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+               HorizontalTextAlignment="Center"/>
+        </StackLayout>
+        <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <Image x:Name="__QRCode" HeightRequest="200" WidthRequest="200" Aspect="AspectFit"
+               VerticalOptions="Center" HorizontalOptions="Center"/>
+        </Grid>
         <Button x:Name="__Close" Text="Close"
                 Padding="15" FontSize="24" CornerRadius="25"
                 VerticalOptions="End" HorizontalOptions="Center"
