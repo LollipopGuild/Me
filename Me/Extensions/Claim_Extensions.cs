@@ -12,7 +12,7 @@ namespace Me
     {
         public static string QRCodeString(this ObservableCollection<ClaimViewModel> claims)
         {
-            return $"claims:{string.Join(":", claims.Where(c => c?.Value != null).Select(c => $"{c.Name}|{c.Value}"))}";
+            return $"IOPClaimVerification://{string.Join("|", claims.Where(c => c?.Value != null).Select(c => $"{c.Name}~{c.Value}"))}";
         }
 
         public static string FamilyName(this ObservableCollection<ClaimViewModel> claims)
