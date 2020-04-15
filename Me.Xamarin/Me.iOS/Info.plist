@@ -40,20 +40,5 @@
 	<array>
 		<string>Fonts/me.ttf</string>
 	</array>
-	<key>CFBundleURLTypes</key>
-	<array>
-		<dict>
-			<key>CFBundleURLName</key>
-			<string>com.alchebyte.me</string>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>IOPClaimVerification</string>
-			</array>
-			<key>CFBundleURLIconFile</key>
-			<string>Icon180</string>
-			<key>CFBundleTypeRole</key>
-			<string>Viewer</string>
-		</dict>
-	</array>
 </dict>
 </plist>
