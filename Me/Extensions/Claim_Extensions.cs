@@ -12,7 +12,9 @@ namespace Me
     {
         public static string QRCodeString(this ObservableCollection<ClaimViewModel> claims)
         {
-            return $"IOPClaimVerification://{string.Join("|", claims.Where(c => c?.Value != null).Select(c => $"{c.Name}~{c.Value}"))}";
+            //return $"IOPClaimVerification://{string.Join("|", claims.Where(c => c?.Value != null).Select(c => $"{c.Name}~{c.Value}"))}";
+            var claim = $"{string.Join("|", claims.Where(c => c?.Value != null).Select(c => $"{c.Name}~{c.Value}"))}";
+            return $"https://me-web.azurewebsites.net/IOPClaimVerification?{claim.EncodeBase64()}";
         }
 
         public static string FamilyName(this ObservableCollection<ClaimViewModel> claims)
@@ -24,6 +26,18 @@ namespace Me
         {
             return string.Join(" ", claims.Where(c => c.Name == "Name_Given")
                                                .Select(c => c.Value));
+        }
+
+
+        public static string EncodeBase64(this string inStr)
+        {
+            return Convert.ToBase64String(Encoding.UTF8.GetBytes(inStr));
+        }
+
+        public static string DecodeBase64(this string inStr)
+        {
+            byte[] buf = Convert.FromBase64String(inStr);
+            return Encoding.UTF8.GetString(buf, 0, buf.Length);
         }
 
     }
