@@ -11,9 +11,9 @@ namespace Me.Web.Controllers
     [Route("apple-app-site-association")]
     public class AppleController : Controller
     {
-        private IHostingEnvironment _hostingEnvironment;
+        private IWebHostEnvironment _hostingEnvironment;
 
-        public AppleController(IHostingEnvironment environment)
+        public AppleController(IWebHostEnvironment environment)
         {
             _hostingEnvironment = environment;
         }
